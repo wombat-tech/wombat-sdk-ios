@@ -1,0 +1,11 @@
+framework module WombatAuth {
+  umbrella header "WombatAuth.h"
+
+  export *
+  module * { export * }
+}
+
+module WombatAuth.Swift {
+    header "WombatAuth-Swift.h"
+    requires objc
+}
