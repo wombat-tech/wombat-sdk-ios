@@ -17,9 +17,7 @@ iOS client SDK for DApps.
 4. [**Sign**](#sign): Request signature
 
 ## Installation
-1. Download the latest version of the framework [here](https://github.com/wombat-tech/wombat-sdk-ios/releases).
-2. Add `WombatAuth.framework` into your Embedded Binaries.
-3. Add the following 2 snippets into your `Info.plist`.
+Add the following 2 snippets into your `Info.plist`.
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -44,7 +42,18 @@ iOS client SDK for DApps.
 </array>
 ```
 
-##### If your project is written in Objective-C
+### Cocoapods
+Add the following line to your Podfile and run `pod install`.
+
+```ruby
+pod 'WombatAuth'
+```
+
+### Manual
+1. Download the latest version of the framework [here](https://github.com/wombat-tech/wombat-sdk-ios/releases).
+2. Add `WombatAuth.framework` into your Embedded Binaries.
+
+###### If your project is written in Objective-C
 4. In project's **Build Settings** set **Always Embed Swift Standard Libraries** to **YES**.
 5. Import the library by adding `#import <WombatAuth/WombatAuth-Swift.h>`.
 
