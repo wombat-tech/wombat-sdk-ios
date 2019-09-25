@@ -287,6 +287,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WombatAuth *
 /// Place this in <code>application(_:open:options:)</code>
 /// \param url The URL resource
 ///
+/// \param options A dictionary of URL handling options
+///
 /// \param completion A block object to be executed when the URL is processed
 ///
 ///
