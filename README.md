@@ -79,7 +79,7 @@ In order to receive results you need to register an url handler in the `AppDeleg
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-    return WombatAuth.shared.application(open: url, options: options) { result in
+    return WombatAuth.shared.application(open: url) { result in
         switch result {
         case .success(let action, let data):
             switch action {
@@ -110,7 +110,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ##### Objective-C
 ```objc
-[WombatAuth.shared openURL: url options: options completionHandler: ^(WMResultObj *result) {
+[WombatAuth.shared openURL: url completionHandler: ^(WMResultObj *result) {
     WMActionType action = result.action; // WMActionTypeUnknown, WMActionTypeAuthorize, WMActionTypePushTransaction, WMActionTypeSignTransaction, WMActionTypeTransfer
     WMResultType resultType = result.type; // WMResultTypeSuccess, WMResultTypeError, WMResultTypeUserCancelled
     NSDictionary *data = result.data; // NSDictionary<NSString *,id>

@@ -10,8 +10,8 @@
 		12261FFA2322AD32003E0E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12261FF92322AD32003E0E35 /* AppDelegate.swift */; };
 		12261FFC2322AD32003E0E35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12261FFB2322AD32003E0E35 /* ViewController.swift */; };
 		12261FFF2322AD32003E0E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12261FFD2322AD32003E0E35 /* Main.storyboard */; };
-		12A8DADC233BF5AF006852E7 /* WombatAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A8DADB233BF5AF006852E7 /* WombatAuth.framework */; };
-		12A8DADD233BF5AF006852E7 /* WombatAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12A8DADB233BF5AF006852E7 /* WombatAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		122BE761233CD9B7003F2CA3 /* WombatAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122BE760233CD9B7003F2CA3 /* WombatAuth.framework */; };
+		122BE762233CD9B7003F2CA3 /* WombatAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 122BE760233CD9B7003F2CA3 /* WombatAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +21,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				12A8DADD233BF5AF006852E7 /* WombatAuth.framework in Embed Frameworks */,
+				122BE762233CD9B7003F2CA3 /* WombatAuth.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,7 +34,7 @@
 		12261FFB2322AD32003E0E35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12261FFE2322AD32003E0E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		122620052322AD35003E0E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12A8DADB233BF5AF006852E7 /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WombatAuth.framework; sourceTree = "<group>"; };
+		122BE760233CD9B7003F2CA3 /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WombatAuth.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12A8DADC233BF5AF006852E7 /* WombatAuth.framework in Frameworks */,
+				122BE761233CD9B7003F2CA3 /* WombatAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +52,7 @@
 		12261FED2322AD32003E0E35 = {
 			isa = PBXGroup;
 			children = (
-				12A8DADB233BF5AF006852E7 /* WombatAuth.framework */,
+				122BE760233CD9B7003F2CA3 /* WombatAuth.framework */,
 				12261FF82322AD32003E0E35 /* DemoApp */,
 				12261FF72322AD32003E0E35 /* Products */,
 			);

@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         // MARK: 2. Handle responses
-        return WombatAuth.shared.application(open: url, options: options) { (result: WombatAuth.RequestResult) in
+        return WombatAuth.shared.application(open: url) { (result: WombatAuth.RequestResult) in
             switch result {
             case .success(let action, let data):
                 switch action {
