@@ -225,7 +225,8 @@ SWIFT_CLASS("_TtC10WombatAuth11WMResultObj")
 @property (nonatomic, readonly) enum WMActionType action;
 @property (nonatomic, readonly) enum WMResultType type;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull data;
-- (nonnull instancetype)initWithAction:(enum WMActionType)action type:(enum WMResultType)type data:(NSDictionary<NSString *, id> * _Nonnull)data OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+- (nonnull instancetype)initWithAction:(enum WMActionType)action type:(enum WMResultType)type data:(NSDictionary<NSString *, id> * _Nonnull)data message:(NSString * _Nonnull)message OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -546,7 +547,8 @@ SWIFT_CLASS("_TtC10WombatAuth11WMResultObj")
 @property (nonatomic, readonly) enum WMActionType action;
 @property (nonatomic, readonly) enum WMResultType type;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull data;
-- (nonnull instancetype)initWithAction:(enum WMActionType)action type:(enum WMResultType)type data:(NSDictionary<NSString *, id> * _Nonnull)data OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+- (nonnull instancetype)initWithAction:(enum WMActionType)action type:(enum WMResultType)type data:(NSDictionary<NSString *, id> * _Nonnull)data message:(NSString * _Nonnull)message OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

@@ -93,7 +93,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
            case .transfer:
                print(data["transactionID"])
            }
-       case .error(let error):
+       case .error(let action, let error):
            switch error {
            case .unknown(let errorMessage):
                print(errorMessage)
@@ -113,6 +113,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 [WombatAuth.shared openURL: url completionHandler: ^(WMResultObj *result) {
     WMActionType action = result.action; // WMActionTypeUnknown, WMActionTypeAuthorize, WMActionTypePushTransaction, WMActionTypeSignTransaction, WMActionTypeTransfer
     WMResultType resultType = result.type; // WMResultTypeSuccess, WMResultTypeError, WMResultTypeUserCancelled
+    NSString *message = result.message; // "success" or an error message
     NSDictionary *data = result.data; // NSDictionary<NSString *,id>
 }];
 ```

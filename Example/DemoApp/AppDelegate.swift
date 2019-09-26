@@ -33,12 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
 
                 dump(data)
-            case .error(let error):
+            case .error(let action, let error):
+                let actionType = (action == nil) ? "Unknown" : String(describing: action!)
+
                 switch error {
                 case .unknown(let errorMessage):
-                    showAlert(title: "Unknown Error", message: errorMessage ?? "N/A")
+                    showAlert(title: "\(actionType) - Unknown Error", message: errorMessage ?? "N/A")
                 case .invalidResponse:
-                    showAlert(title: "Invalid Response")
+                    showAlert(title: "\(actionType) - Invalid Response")
                 }
             case .userCancelled(let action):
                 showAlert(title: String(describing: action), message: "Cancelled by the user")
