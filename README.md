@@ -17,6 +17,10 @@ iOS client SDK for DApps.
 4. [**Sign**](#sign): Request signature
 
 ## Installation
+
+_You might encounter a problem while submitting your app to the App Store. This is due to a [bug in the App Store](http://www.openradar.me/radar?id=6409498411401216) itself. You can solve it by creating a new **Run Script Phase**, after the **Embed Frameworks** phase, in your app’s target’s **Build Phases**, and copying the script available [here](https://stackoverflow.com/a/30866648)._
+
+
 Add the following 2 snippets into your `Info.plist`.
 
 ```xml
