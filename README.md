@@ -114,12 +114,37 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ##### Objective-C
 ```objc
-[WombatAuth.shared openURL: url completionHandler: ^(WMResultObj *result) {
-    WMActionType action = result.action; // WMActionTypeUnknown, WMActionTypeAuthorize, WMActionTypePushTransaction, WMActionTypeSignTransaction, WMActionTypeTransfer
-    WMResultType resultType = result.type; // WMResultTypeSuccess, WMResultTypeError, WMResultTypeUserCancelled
-    NSString *message = result.message; // "success" or an error message
-    NSDictionary *data = result.data; // NSDictionary<NSString *,id>
-}];
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [WombatAuth.shared openURL:url completionHandler:^(WMResultObj *result) {
+        NSString *message = result.message; // "success" or an error message
+        NSDictionary *data = result.data; // NSDictionary<NSString *,id>
+
+        switch (result.type) {
+            case WMResultTypeSuccess:
+                switch (result.action) {
+                    case WMActionTypeAuthorize:
+                        // data[@"accountName"] - NSString
+                        // data[@"publicKey"] - NSString
+                        break;
+                    case WMActionTypePushTransaction:
+                        // data[@"transactionID"] - NSString
+                        break;
+                    case WMActionTypeSignTransaction:
+                        // data[@"signature"] - NSString
+                        break;
+                    case WMActionTypeTransfer:
+                        // data[@"transactionID"] - NSString
+                        break;
+                    case WMActionTypeUnknown:
+                        break;
+                }
+            case WMResultTypeError:
+                break;
+            case WMResultTypeUserCancelled:
+                break;
+        }
+    }];
+}
 ```
 
 ## Actions
