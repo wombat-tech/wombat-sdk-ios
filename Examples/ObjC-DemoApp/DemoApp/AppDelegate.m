@@ -11,7 +11,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     #pragma mark 1. Register your app
-    [WombatAuth.shared registerAppWithName:@"Testing App" icon:[NSURL URLWithString:@"https://assets.website-files.com/5cde8c951beecf3604688a58/5d120b2cba030f78d70c7236_Wombat_logo_transparent-p-500.png"]];
+    // You can optionally also specify `chainID`. If omitted, the wallet will use the EOS blockchain as default
+    [WombatAuth.shared registerAppWithName:@"Testing App" icon:[NSURL URLWithString:@"https://assets.website-files.com/5cde8c951beecf3604688a58/5d120b2cba030f78d70c7236_Wombat_logo_transparent-p-500.png"] chainID: nil];
     return YES;
 }
 
@@ -33,7 +34,7 @@
                             [self showAlertWithTitle:@"Push" message:transactionID];
                             break;
                         }
-                    case WMActionTypeSignTransaction: {
+                    case WMActionTypeSignData: {
                             NSString *signature = [result.data valueForKey:@"signature"];
                             [self showAlertWithTitle:@"Sign" message:signature];
                             break;

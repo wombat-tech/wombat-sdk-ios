@@ -11,10 +11,10 @@
 iOS client SDK for DApps.
 
 ## Supported Actions
-1. [**Authorize**](#authorize): Retrieve account details for an EOS account
-2. [**Transfer**](#transfer): EOS transfer
-3. [**Push**](#push): Push EOS transaction
-4. [**Sign**](#sign): Request signature
+1. [**Authorize**](#authorize): Request the account details
+2. [**Transfer**](#transfer): Request a transfer of funds
+3. [**Push**](#push): Push a transaction
+4. [**Sign**](#sign): Request a signature
 
 ## Installation
 
@@ -64,7 +64,7 @@ pod 'WombatAuth'
 ## Usage
 #### Register your app
 
-Make sure your app is registered prior to executing any requests.
+Make sure your app is registered prior to executing any requests. You can optionally also specify `chainID`. If omitted, the wallet will use the **EOS** blockchain as default.
 
 ```swift
 import WombatAuth
@@ -92,7 +92,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
                 print(data["publicKey"])
             case .pushTransaction:
                 print(data["transactionID"])
-            case .signTransaction:
+            case .signData:
                 print(data["signature"])
            case .transfer:
                print(data["transactionID"])
@@ -129,7 +129,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
                     case WMActionTypePushTransaction:
                         // data[@"transactionID"] - NSString
                         break;
-                    case WMActionTypeSignTransaction:
+                    case WMActionTypeSignData:
                         // data[@"signature"] - NSString
                         break;
                     case WMActionTypeTransfer:
@@ -181,7 +181,7 @@ let transaction = WMTransaction(
             data: [
                 "from": "account_name",
                 "to": "account_name_2",
-                "quantity": "1 EOS",
+                "quantity": "1.0000 EOS",
                 "memo": "Here you go"
             ]
         )
