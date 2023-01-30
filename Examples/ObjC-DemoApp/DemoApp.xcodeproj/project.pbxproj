@@ -3,26 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		12FB2C5123619E8B00D6EAEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB2C5023619E8B00D6EAEA /* AppDelegate.m */; };
-		12FB2C5723619E8B00D6EAEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB2C5623619E8B00D6EAEA /* ViewController.m */; };
+		12FB2C5723619E8B00D6EAEA /* EOSIOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB2C5623619E8B00D6EAEA /* EOSIOViewController.m */; };
 		12FB2C5A23619E8B00D6EAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FB2C5823619E8B00D6EAEA /* Main.storyboard */; };
 		12FB2C6223619E8D00D6EAEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FB2C6123619E8D00D6EAEA /* main.m */; };
-		12FB2C6F2361A40200D6EAEA /* WombatAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB2C6D2361A3FE00D6EAEA /* WombatAuth.framework */; };
-		12FB2C702361A40200D6EAEA /* WombatAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB2C6D2361A3FE00D6EAEA /* WombatAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B48AA65298BADEF009ACD62 /* WombatAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B383373298A9147005FAFEA /* WombatAuth.xcframework */; };
+		3B48AA66298BADEF009ACD62 /* WombatAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B383373298A9147005FAFEA /* WombatAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B48AA6A298BB09A009ACD62 /* EVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48AA69298BB09A009ACD62 /* EVMViewController.m */; };
+		3B48AA6D298BB43B009ACD62 /* NSString+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B48AA6C298BB43B009ACD62 /* NSString+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		12FB2C712361A40200D6EAEA /* Embed Frameworks */ = {
+		3B48AA67298BADEF009ACD62 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				12FB2C702361A40200D6EAEA /* WombatAuth.framework in Embed Frameworks */,
+				3B48AA66298BADEF009ACD62 /* WombatAuth.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,12 +35,16 @@
 		12FB2C4C23619E8B00D6EAEA /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FB2C4F23619E8B00D6EAEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12FB2C5023619E8B00D6EAEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		12FB2C5523619E8B00D6EAEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		12FB2C5623619E8B00D6EAEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		12FB2C5523619E8B00D6EAEA /* EOSIOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOViewController.h; sourceTree = "<group>"; };
+		12FB2C5623619E8B00D6EAEA /* EOSIOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOSIOViewController.m; sourceTree = "<group>"; };
 		12FB2C5923619E8B00D6EAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12FB2C6023619E8D00D6EAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12FB2C6123619E8D00D6EAEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		12FB2C6D2361A3FE00D6EAEA /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WombatAuth.framework; sourceTree = "<group>"; };
+		3B383373298A9147005FAFEA /* WombatAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WombatAuth.xcframework; path = ../../Frameworks/WombatAuth.xcframework; sourceTree = "<group>"; };
+		3B48AA68298BB09A009ACD62 /* EVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVMViewController.h; sourceTree = "<group>"; };
+		3B48AA69298BB09A009ACD62 /* EVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVMViewController.m; sourceTree = "<group>"; };
+		3B48AA6B298BB43B009ACD62 /* NSString+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hex.h"; sourceTree = "<group>"; };
+		3B48AA6C298BB43B009ACD62 /* NSString+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12FB2C6F2361A40200D6EAEA /* WombatAuth.framework in Frameworks */,
+				3B48AA65298BADEF009ACD62 /* WombatAuth.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +62,6 @@
 		12FB2C4323619E8B00D6EAEA = {
 			isa = PBXGroup;
 			children = (
-				12FB2C6D2361A3FE00D6EAEA /* WombatAuth.framework */,
 				12FB2C4E23619E8B00D6EAEA /* DemoApp */,
 				12FB2C4D23619E8B00D6EAEA /* Products */,
 				12FB2C682361A3BE00D6EAEA /* Frameworks */,
@@ -76,11 +81,15 @@
 			children = (
 				12FB2C4F23619E8B00D6EAEA /* AppDelegate.h */,
 				12FB2C5023619E8B00D6EAEA /* AppDelegate.m */,
-				12FB2C5523619E8B00D6EAEA /* ViewController.h */,
-				12FB2C5623619E8B00D6EAEA /* ViewController.m */,
+				12FB2C5523619E8B00D6EAEA /* EOSIOViewController.h */,
+				12FB2C5623619E8B00D6EAEA /* EOSIOViewController.m */,
+				3B48AA68298BB09A009ACD62 /* EVMViewController.h */,
+				3B48AA69298BB09A009ACD62 /* EVMViewController.m */,
 				12FB2C5823619E8B00D6EAEA /* Main.storyboard */,
 				12FB2C6023619E8D00D6EAEA /* Info.plist */,
 				12FB2C6123619E8D00D6EAEA /* main.m */,
+				3B48AA6B298BB43B009ACD62 /* NSString+Hex.h */,
+				3B48AA6C298BB43B009ACD62 /* NSString+Hex.m */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -88,6 +97,7 @@
 		12FB2C682361A3BE00D6EAEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B383373298A9147005FAFEA /* WombatAuth.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,7 +112,7 @@
 				12FB2C4823619E8B00D6EAEA /* Sources */,
 				12FB2C4923619E8B00D6EAEA /* Frameworks */,
 				12FB2C4A23619E8B00D6EAEA /* Resources */,
-				12FB2C712361A40200D6EAEA /* Embed Frameworks */,
+				3B48AA67298BADEF009ACD62 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12FB2C5723619E8B00D6EAEA /* ViewController.m in Sources */,
+				3B48AA6D298BB43B009ACD62 /* NSString+Hex.m in Sources */,
+				12FB2C5723619E8B00D6EAEA /* EOSIOViewController.m in Sources */,
+				3B48AA6A298BB09A009ACD62 /* EVMViewController.m in Sources */,
 				12FB2C5123619E8B00D6EAEA /* AppDelegate.m in Sources */,
 				12FB2C6223619E8D00D6EAEA /* main.m in Sources */,
 			);
@@ -295,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AA4H2Z46G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -317,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AA4H2Z46G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

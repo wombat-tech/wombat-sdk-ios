@@ -3,25 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		12261FFA2322AD32003E0E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12261FF92322AD32003E0E35 /* AppDelegate.swift */; };
-		12261FFC2322AD32003E0E35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12261FFB2322AD32003E0E35 /* ViewController.swift */; };
+		12261FFC2322AD32003E0E35 /* EOSIOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12261FFB2322AD32003E0E35 /* EOSIOViewController.swift */; };
 		12261FFF2322AD32003E0E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12261FFD2322AD32003E0E35 /* Main.storyboard */; };
-		12DB811E233FDD8800F2ED09 /* WombatAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DB811C233FDCF300F2ED09 /* WombatAuth.framework */; };
-		12DB811F233FDD8800F2ED09 /* WombatAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12DB811C233FDCF300F2ED09 /* WombatAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B38336E29893FD6005FAFEA /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38336D29893FD6005FAFEA /* String+Hex.swift */; };
+		3B38337129893FF6005FAFEA /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38337029893FF6005FAFEA /* Data+Hex.swift */; };
+		3BEB01B9298935900083A0A4 /* EVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB01B8298935900083A0A4 /* EVMViewController.swift */; };
+		3BEB01BB298939130083A0A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB01BA298939130083A0A4 /* Constants.swift */; };
+		3BEB01BD29893B8A0083A0A4 /* WombatAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEB01BC29893B890083A0A4 /* WombatAuth.xcframework */; };
+		3BEB01BE29893B8A0083A0A4 /* WombatAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEB01BC29893B890083A0A4 /* WombatAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		12DB8120233FDD8800F2ED09 /* Embed Frameworks */ = {
+		3BEB01B7298926620083A0A4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				12DB811F233FDD8800F2ED09 /* WombatAuth.framework in Embed Frameworks */,
+				3BEB01BE29893B8A0083A0A4 /* WombatAuth.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,11 +35,17 @@
 /* Begin PBXFileReference section */
 		12261FF62322AD32003E0E35 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12261FF92322AD32003E0E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		12261FFB2322AD32003E0E35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12261FFB2322AD32003E0E35 /* EOSIOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSIOViewController.swift; sourceTree = "<group>"; };
 		12261FFE2322AD32003E0E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		122620052322AD35003E0E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122BE76B233D6CDB003F2CA3 /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WombatAuth.framework; path = ../../../../../../Desktop/WombatAuth.framework; sourceTree = "<group>"; };
-		12DB811C233FDCF300F2ED09 /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WombatAuth.framework; sourceTree = "<group>"; };
+		3B0D77E02987F0C400E0B344 /* WombatAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = WombatAuth.xcframework; sourceTree = "<group>"; };
+		3B38336D29893FD6005FAFEA /* String+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
+		3B38337029893FF6005FAFEA /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
+		3BEB01B8298935900083A0A4 /* EVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVMViewController.swift; sourceTree = "<group>"; };
+		3BEB01BA298939130083A0A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3BEB01BC29893B890083A0A4 /* WombatAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WombatAuth.xcframework; path = ../../Frameworks/WombatAuth.xcframework; sourceTree = "<group>"; };
+		3BF7E56D2988079700D6B722 /* WombatAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WombatAuth.framework; path = "WombatAuth.xcframework/ios-arm64_x86_64-simulator/WombatAuth.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12DB811E233FDD8800F2ED09 /* WombatAuth.framework in Frameworks */,
+				3BEB01BD29893B8A0083A0A4 /* WombatAuth.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +63,6 @@
 		12261FED2322AD32003E0E35 = {
 			isa = PBXGroup;
 			children = (
-				12DB811C233FDCF300F2ED09 /* WombatAuth.framework */,
 				12261FF82322AD32003E0E35 /* DemoApp */,
 				12261FF72322AD32003E0E35 /* Products */,
 				122BE76A233D6CDB003F2CA3 /* Frameworks */,
@@ -71,10 +80,13 @@
 		12261FF82322AD32003E0E35 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				3B38336F29893FE7005FAFEA /* Extensions */,
 				12261FF92322AD32003E0E35 /* AppDelegate.swift */,
-				12261FFB2322AD32003E0E35 /* ViewController.swift */,
+				12261FFB2322AD32003E0E35 /* EOSIOViewController.swift */,
+				3BEB01B8298935900083A0A4 /* EVMViewController.swift */,
 				12261FFD2322AD32003E0E35 /* Main.storyboard */,
 				122620052322AD35003E0E35 /* Info.plist */,
+				3BEB01BA298939130083A0A4 /* Constants.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -82,9 +94,21 @@
 		122BE76A233D6CDB003F2CA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BEB01BC29893B890083A0A4 /* WombatAuth.xcframework */,
+				3BF7E56D2988079700D6B722 /* WombatAuth.framework */,
+				3B0D77E02987F0C400E0B344 /* WombatAuth.xcframework */,
 				122BE76B233D6CDB003F2CA3 /* WombatAuth.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B38336F29893FE7005FAFEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3B38336D29893FD6005FAFEA /* String+Hex.swift */,
+				3B38337029893FF6005FAFEA /* Data+Hex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +121,7 @@
 				12261FF22322AD32003E0E35 /* Sources */,
 				12261FF32322AD32003E0E35 /* Frameworks */,
 				12261FF42322AD32003E0E35 /* Resources */,
-				12DB8120233FDD8800F2ED09 /* Embed Frameworks */,
+				3BEB01B7298926620083A0A4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,8 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12261FFC2322AD32003E0E35 /* ViewController.swift in Sources */,
+				12261FFC2322AD32003E0E35 /* EOSIOViewController.swift in Sources */,
+				3BEB01B9298935900083A0A4 /* EVMViewController.swift in Sources */,
+				3B38336E29893FD6005FAFEA /* String+Hex.swift in Sources */,
+				3B38337129893FF6005FAFEA /* Data+Hex.swift in Sources */,
 				12261FFA2322AD32003E0E35 /* AppDelegate.swift in Sources */,
+				3BEB01BB298939130083A0A4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +325,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AA4H2Z46G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WombatAuth.xcframework/ios-arm64_x86_64-simulator",
 				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,12 +350,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AA4H2Z46G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WombatAuth.xcframework/ios-arm64_x86_64-simulator",
 				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,86 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BTl-In-ohW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dnr-QM-FKc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="dvj-5H-EMM">
+        <!--Navigation Controller-->
+        <scene sceneID="w74-0n-xRO">
             <objects>
-                <viewController id="BTl-In-ohW" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sKO-up-2Fs">
+                <navigationController id="Dnr-QM-FKc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mmV-df-V9F">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Hkk-QO-jI3" kind="relationship" relationship="rootViewController" id="Z0v-UG-P42"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9T-xt-jmT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1264" y="106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jCg-Qa-exx">
+            <objects>
+                <viewController id="Hkk-QO-jI3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OZS-Ve-lwe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SdS-C4-cd3">
-                                <rect key="frame" x="20" y="318" width="374" height="260"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xr3-tm-4EZ">
+                                <rect key="frame" x="170" y="403.5" width="74" height="89"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6m-qh-KtP">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.06297019676" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="sIQ-ZU-uIp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Authorize">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGZ-Gf-pWd">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="EOSIO"/>
                                         <connections>
-                                            <action selector="authorize" destination="BTl-In-ohW" eventType="touchUpInside" id="v4p-ae-p2K"/>
+                                            <segue destination="D7x-5Y-RlV" kind="show" id="Arl-Ci-npy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY2-AC-PUr">
-                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.06297019676" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Transfer">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkX-C7-Efa">
+                                        <rect key="frame" x="0.0" y="54.5" width="74" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="EVM"/>
                                         <connections>
-                                            <action selector="transfer" destination="BTl-In-ohW" eventType="touchUpInside" id="T2V-Nx-TN2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMP-Wd-ejR">
-                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.06297019676" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Sign">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sign" destination="BTl-In-ohW" eventType="touchUpInside" id="D3K-Og-xUe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-E0-c8J">
-                                        <rect key="frame" x="0.0" y="210" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.87058823529999996" green="0.06297019676" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Push Transaction">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="push" destination="BTl-In-ohW" eventType="touchUpInside" id="6DU-WI-TfD"/>
+                                            <segue destination="wjj-x4-gGb" kind="show" id="tcm-4f-trx"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="A6l-e6-SNg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SdS-C4-cd3" firstAttribute="centerY" secondItem="sKO-up-2Fs" secondAttribute="centerY" id="LUV-tz-B6K"/>
-                            <constraint firstItem="SdS-C4-cd3" firstAttribute="leading" secondItem="Hky-pE-izX" secondAttribute="leading" constant="20" id="hGy-8Q-17l"/>
-                            <constraint firstItem="Hky-pE-izX" firstAttribute="trailing" secondItem="SdS-C4-cd3" secondAttribute="trailing" constant="20" id="vdw-Yl-BmD"/>
+                            <constraint firstItem="xr3-tm-4EZ" firstAttribute="centerX" secondItem="OZS-Ve-lwe" secondAttribute="centerX" id="A7e-WC-85X"/>
+                            <constraint firstItem="xr3-tm-4EZ" firstAttribute="centerY" secondItem="OZS-Ve-lwe" secondAttribute="centerY" id="Y6x-Iy-lYM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hky-pE-izX"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3o8-Xw-tXD"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yGP-5F-lvr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6La-eR-Kz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="165"/>
+            <point key="canvasLocation" x="-232" y="106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SbQ-DX-WbK">
+            <objects>
+                <viewController id="wjj-x4-gGb" customClass="EVMViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIH-F0-m8o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-At-wY3">
+                                <rect key="frame" x="132.5" y="322" width="149.5" height="252.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-fr-0iO">
+                                        <rect key="frame" x="0.0" y="0.0" width="149.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Authorize"/>
+                                        <connections>
+                                            <action selector="authorize:" destination="wjj-x4-gGb" eventType="touchUpInside" id="uIy-Y7-e38"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx5-u1-kuC">
+                                        <rect key="frame" x="0.0" y="54.5" width="149.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Personal Sign"/>
+                                        <connections>
+                                            <action selector="personalSign:" destination="wjj-x4-gGb" eventType="touchUpInside" id="5tT-BQ-Pav"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoN-Mi-Tds">
+                                        <rect key="frame" x="0.0" y="109" width="149.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Typed Data"/>
+                                        <connections>
+                                            <action selector="signTypedData:" destination="wjj-x4-gGb" eventType="touchUpInside" id="nVM-kb-qNN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRK-B7-CLq">
+                                        <rect key="frame" x="0.0" y="163.5" width="149.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Transfer"/>
+                                        <connections>
+                                            <action selector="transfer:" destination="wjj-x4-gGb" eventType="touchUpInside" id="vNX-U3-c4u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNW-jV-Bm0">
+                                        <rect key="frame" x="0.0" y="218" width="149.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Transaction"/>
+                                        <connections>
+                                            <action selector="transaction:" destination="wjj-x4-gGb" eventType="touchUpInside" id="yKO-Rh-2rf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9v3-m9-Erd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MNx-At-wY3" firstAttribute="centerX" secondItem="DIH-F0-m8o" secondAttribute="centerX" id="6MQ-eG-WGd"/>
+                            <constraint firstItem="MNx-At-wY3" firstAttribute="centerY" secondItem="DIH-F0-m8o" secondAttribute="centerY" id="NDr-cO-cuk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KEF-8V-MFa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b39-Xi-pzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="482"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ab2-56-waL">
+            <objects>
+                <viewController id="D7x-5Y-RlV" customClass="EOSIOViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TVh-Tt-kI6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-18-OML">
+                                <rect key="frame" x="150.5" y="349" width="113" height="198"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LI-6L-Kgx">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Authorize"/>
+                                        <connections>
+                                            <action selector="authorize" destination="D7x-5Y-RlV" eventType="touchUpInside" id="28P-vG-hwL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY2-rb-Iyh">
+                                        <rect key="frame" x="0.0" y="54.5" width="113" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign"/>
+                                        <connections>
+                                            <action selector="sign" destination="D7x-5Y-RlV" eventType="touchUpInside" id="D20-sW-bdC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPp-Cc-88c">
+                                        <rect key="frame" x="0.0" y="109" width="113" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Transfer"/>
+                                        <connections>
+                                            <action selector="transfer" destination="D7x-5Y-RlV" eventType="touchUpInside" id="0WH-tq-Kfs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cm-M4-aTv">
+                                        <rect key="frame" x="0.0" y="163.5" width="113" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Transaction"/>
+                                        <connections>
+                                            <action selector="push" destination="D7x-5Y-RlV" eventType="touchUpInside" id="1Xq-bK-16I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eBs-d3-11D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FDZ-18-OML" firstAttribute="centerY" secondItem="TVh-Tt-kI6" secondAttribute="centerY" id="0KQ-cI-Z67"/>
+                            <constraint firstItem="FDZ-18-OML" firstAttribute="centerX" secondItem="TVh-Tt-kI6" secondAttribute="centerX" id="95H-t8-gud"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AKR-GS-APV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNO-6w-8lf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="-368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

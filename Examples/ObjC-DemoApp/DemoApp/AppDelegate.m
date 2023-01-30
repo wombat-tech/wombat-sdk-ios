@@ -12,42 +12,62 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     #pragma mark 1. Register your app
     // You can optionally also specify `chainID`. If omitted, the wallet will use the EOS blockchain as default
-    [WombatAuth.shared registerAppWithName:@"Testing App" icon:[NSURL URLWithString:@"https://assets.website-files.com/5cde8c951beecf3604688a58/5d120b2cba030f78d70c7236_Wombat_logo_transparent-p-500.png"] chainID: nil];
+    
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     #pragma mark 2. Handle responses
-    return [WombatAuth.shared openURL:url completionHandler:^(WMResultObj *result) {
+    return [WMAuth.shared openURL:url completionHandler:^(WMResultObj *result) {
         switch (result.type) {
             case WMResultTypeSuccess:
                 switch (result.action) {
                     case WMActionTypeAuthorize: {
-                        NSString *accountName = [result.data valueForKey:@"accountName"];
-                        NSString *publicKey = [result.data valueForKey:@"publicKey"];
-                        NSString *alertMessage = [NSString stringWithFormat:@"Name: %@\nKey: %@", accountName, publicKey];
-                        [self showAlertWithTitle:@"Auth" message:alertMessage];
+                        if (result.blockchain.isEvm) {
+                            NSString *address = [result.data valueForKey:@"address"];
+                            [self showAlertWithTitle:@"Auth" message:address];
+                        } else {
+                            NSString *accountName = [result.data valueForKey:@"accountName"];
+                            NSString *publicKey = [result.data valueForKey:@"publicKey"];
+                            NSString *alertMessage = [NSString stringWithFormat:@"Name: %@\nKey: %@", accountName, publicKey];
+                            [self showAlertWithTitle:@"Auth" message:alertMessage];
+                        }
                         break;
                     }
-                    case WMActionTypePushTransaction: {
-                            NSString *transactionID = [result.data valueForKey:@"transactionID"];
-                            [self showAlertWithTitle:@"Push" message:transactionID];
-                            break;
-                        }
-                    case WMActionTypeSignData: {
-                            NSString *signature = [result.data valueForKey:@"signature"];
-                            [self showAlertWithTitle:@"Sign" message:signature];
-                            break;
-                        }
-                    case WMActionTypeTransfer: {
-                            NSString *transactionID = [result.data valueForKey:@"transactionID"];
-                            [self showAlertWithTitle:@"Transfer" message:transactionID];
-                            break;
-                        };
+                    case WMActionTypePushTransactionEVM: {
+                        NSString *transactionID = [result.data valueForKey:@"transactionID"];
+                        [self showAlertWithTitle:@"Push" message:transactionID];
+                        break;
+                    }
+                    case WMActionTypePersonalSignEVM: {
+                        NSString *transactionID = [result.data valueForKey:@"signedMessage"];
+                        [self showAlertWithTitle:@"Personal Sign" message:transactionID];
+                        break;
+                    }
+                    case WMActionTypeSignTypedDataEVM: {
+                        NSString *transactionID = [result.data valueForKey:@"signedMessage"];
+                        [self showAlertWithTitle:@"Sign Typed Data" message:transactionID];
+                        break;
+                    }
+                    case WMActionTypePushTransactionEOSIO: {
+                        NSString *transactionID = [result.data valueForKey:@"transactionID"];
+                        [self showAlertWithTitle:@"Push" message:transactionID];
+                        break;
+                    }
+                    case WMActionTypeSignEOSIO: {
+                        NSString *signature = [result.data valueForKey:@"signature"];
+                        [self showAlertWithTitle:@"Sign" message:signature];
+                        break;
+                    }
+                    case WMActionTypeTransferEOSIO: {
+                        NSString *transactionID = [result.data valueForKey:@"transactionID"];
+                        [self showAlertWithTitle:@"Transfer" message:transactionID];
+                        break;
+                    };
                     case WMActionTypeUnknown: {
-                            [self showAlertWithTitle:@"Unknown" message:result.message];
-                            break;
-                        };
+                        [self showAlertWithTitle:@"Unknown" message:result.message];
+                        break;
+                    };
                 }
                 break;
             case WMResultTypeError:
