@@ -1,0 +1,198 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name WombatAuth
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import UIKit
+@_exported import WombatAuth
+import _Concurrency
+import _StringProcessing
+@objc @_hasMissingDesignatedInitializers @objcMembers public class WMResultObj : ObjectiveC.NSObject {
+  @objc final public let action: WombatAuth.WMResultObj.WMActionType
+  @objc final public let blockchain: WombatAuth.WMBlockchain
+  @objc final public let type: WombatAuth.WMResultObj.WMResultType
+  @objc final public let data: [Swift.String : Any]
+  @objc final public let message: Swift.String
+  @objc public enum WMActionType : Swift.Int {
+    case unknown
+    case authorize
+    case signEOSIO
+    case transferEOSIO
+    case pushTransactionEOSIO
+    case personalSignEVM
+    case signTypedDataEVM
+    case pushTransactionEVM
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum WMResultType : Swift.Int {
+    case success, error, userCancelled
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public init(action: WombatAuth.WMResultObj.WMActionType, blockchain: WombatAuth.WMBlockchain, type: WombatAuth.WMResultObj.WMResultType, data: [Swift.String : Any], message: Swift.String)
+  @objc deinit
+}
+@objc @objcMembers public class WMEOSIOTransfer : ObjectiveC.NSObject, Swift.Encodable {
+  @objc final public let from: Swift.String
+  @objc final public let to: Swift.String
+  @objc final public let amount: Swift.Double
+  @objc final public let precision: Swift.Int
+  @objc final public let contract: Swift.String
+  @objc final public let symbol: Swift.String
+  @objc final public let memo: Swift.String
+  @objc public init(from: Swift.String, to: Swift.String, amount: Swift.Double, precision: Swift.Int, contract: Swift.String, symbol: Swift.String, memo: Swift.String)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum WMAction : Swift.CaseIterable {
+  case authorize
+  case signEOSIO
+  case transferEOSIO
+  case transactionEOSIO
+  case personalSignEVM
+  case signTypedDataEVM
+  case transactionEVM
+  public static func == (a: WombatAuth.WMAction, b: WombatAuth.WMAction) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [WombatAuth.WMAction]
+  public static var allCases: [WombatAuth.WMAction] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class WMEOSIOTransaction : ObjectiveC.NSObject, Swift.Encodable {
+  @objc final public let from: Swift.String
+  @objc final public let actions: [WombatAuth.WMEOSIOTransaction.Action]
+  @objc public init(from: Swift.String, actions: [WombatAuth.WMEOSIOTransaction.Action])
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension WombatAuth.WMEOSIOTransaction {
+  @objc(WMEOSIOAction) @objcMembers public class Action : ObjectiveC.NSObject, Swift.Encodable {
+    @objc final public let account: Swift.String
+    @objc final public let name: Swift.String
+    @objc final public let auth: [WombatAuth.WMEOSIOTransaction.Action.Auth]
+    @objc final public let data: [Swift.String : Any]
+    @objc public init(account: Swift.String, name: Swift.String, auth: [WombatAuth.WMEOSIOTransaction.Action.Auth], data: [Swift.String : Any])
+    public func encode(to encoder: Swift.Encoder) throws
+    @objc deinit
+  }
+}
+extension WombatAuth.WMEOSIOTransaction.Action {
+  @objc(WMEOSIOAuth) @objcMembers public class Auth : ObjectiveC.NSObject, Swift.Encodable {
+    @objc final public let actor: Swift.String
+    @objc final public let permission: Swift.String
+    @objc public init(actor: Swift.String, permission: Swift.String)
+    @objc deinit
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+}
+@objc @objcMembers public class WMEVMTransaction : ObjectiveC.NSObject, Swift.Encodable {
+  @objc final public let from: Swift.String
+  @objc final public let to: Swift.String
+  @objc final public let value: Swift.String?
+  @objc final public let data: Foundation.Data?
+  @objc public init(from: Swift.String, to: Swift.String, value: Swift.String?, data: Foundation.Data?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum ResponseError : Swift.Error {
+  case invalidResponse
+  case unknown(message: Swift.String?)
+}
+public enum Result<Action, Blockchain, Data, Error> {
+  case success(action: Action, blockchain: Blockchain, data: Data)
+  case error(action: Action?, blockchain: Blockchain, error: Error)
+  case userCancelled(action: Action, blockchain: Blockchain)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class WMAuth : ObjectiveC.NSObject {
+  public typealias RequestResult = WombatAuth.Result<WombatAuth.WMAction, WombatAuth.WMBlockchain, [Swift.String : Any], WombatAuth.ResponseError>
+  @objc public static let shared: WombatAuth.WMAuth
+  @objc public func registerApp(name: Swift.String, icon: Foundation.URL, blockchain: WombatAuth.WMBlockchain)
+  public func application(open url: Foundation.URL, completion: (WombatAuth.WMAuth.RequestResult) -> Swift.Void) -> Swift.Bool
+  @objc(openURL:completionHandler:) public func objc_application(open url: Foundation.URL, completion: (WombatAuth.WMResultObj) -> Swift.Void) -> Swift.Bool
+  @objc public func requestAuthorization() throws
+  @objc(requestEOSIOTransfer::) public func requestTransfer(_ transfer: WombatAuth.WMEOSIOTransfer) throws
+  @objc(pushEOSIOTransaction::) public func pushTransaction(_ transaction: WombatAuth.WMEOSIOTransaction) throws
+  @objc(pushEVMTransaction::) public func pushTransaction(_ transaction: WombatAuth.WMEVMTransaction) throws
+  @objc public func requestSignature(account: Swift.String, data: Swift.String) throws
+  @objc public func personalSign(message: Swift.String) throws
+  @objc public func signTypedData(data: Foundation.Data) throws
+  @objc deinit
+}
+extension Swift.String {
+  public var JSONminify: Swift.String {
+    get
+  }
+}
+@objc public enum WMBlockchainPlatform : Swift.Int {
+  case evm
+  case eosio
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class WMBlockchain : ObjectiveC.NSObject {
+  @objc public init(platform: WombatAuth.WMBlockchainPlatform, chainID: Swift.String)
+  @objc deinit
+}
+extension WombatAuth.WMBlockchain {
+  @objc public static var ethereum: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var polygon: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var bnb: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var heco: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var fantom: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var avalanche: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var eos: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var telos: WombatAuth.WMBlockchain {
+    @objc get
+  }
+  @objc public static var wax: WombatAuth.WMBlockchain {
+    @objc get
+  }
+}
+extension WombatAuth.WMBlockchain {
+  @objc dynamic public var isEvm: Swift.Bool {
+    @objc get
+  }
+  @objc dynamic public var isEosio: Swift.Bool {
+    @objc get
+  }
+}
+extension WombatAuth.WMResultObj.WMActionType : Swift.Equatable {}
+extension WombatAuth.WMResultObj.WMActionType : Swift.Hashable {}
+extension WombatAuth.WMResultObj.WMActionType : Swift.RawRepresentable {}
+extension WombatAuth.WMResultObj.WMResultType : Swift.Equatable {}
+extension WombatAuth.WMResultObj.WMResultType : Swift.Hashable {}
+extension WombatAuth.WMResultObj.WMResultType : Swift.RawRepresentable {}
+extension WombatAuth.WMAction : Swift.Equatable {}
+extension WombatAuth.WMAction : Swift.Hashable {}
+extension WombatAuth.WMBlockchainPlatform : Swift.Equatable {}
+extension WombatAuth.WMBlockchainPlatform : Swift.Hashable {}
+extension WombatAuth.WMBlockchainPlatform : Swift.RawRepresentable {}
